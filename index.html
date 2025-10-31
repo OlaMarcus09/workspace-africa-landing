@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Africa - The Future of Flexible Work</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base font */
+        html {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+
+        body {
+             font-family: 'Inter', sans-serif;
+             background-color: #111827; /* bg-gray-900 */
+             color: #E5E7EB; /* text-gray-200 */
+        }
+
+        /* Custom button gradient */
+        .btn-primary {
+            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(245, 158, 11, 0.5);
+        }
+
+        /* Custom modal styles */
+        #message-box {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            background-color: #1F2937; /* bg-gray-800 */
+            border-left-width: 4px;
+        }
+
+        /* --- "COME ALIVE" ANIMATIONS --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Adds a "lift" effect to cards on hover */
+        .card-lift {
+            transition: all 0.3s ease-out;
+        }
+        .card-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Fallback for no-script */
+        noscript .fade-in-section {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+        <div style="padding: 20px; background: #374151; color: #F9FAFB; text-align: center; font-weight: bold;">
+            Please enable JavaScript for the best experience (including animations and form submission).
+        </div>
+    </noscript>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-sm bg-gray-900/80 border-b border-gray-700/80">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0 flex items-center">
+                    <svg class="h-8 w-auto text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-white">Workspace Africa</span>
+                </a>
+                <!-- Nav Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="#for-partners" class="hidden md:inline-block px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                        For Workspace Owners
+                    </a>
+                    <a href="#waitlist-form-section" class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent rounded-full shadow-sm text-sm font-bold text-blue-900 btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                        Join Waitlist
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gray-900 overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <!-- Subtle grid background -->
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="currentColor" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+            </div>
+            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 md:pt-32 md:pb-24">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- NEW Hero Image -->
+                    <div class="fade-in-section is-visible">
+                        <div class="bg-gray-800 rounded-2xl shadow-2xl p-4 border border-gray-700/50">
+                            <img src="https://placehold.co/600x500/1F2937/E5E7EB?text=App+Screenshot&font=inter" 
+                                 alt="Mockup of Workspace Africa app" 
+                                 class="rounded-xl aspect-[6/5] object-cover"
+                                 onerror="this.src='https://placehold.co/600x500/1F2937/ffffff?text=App+Screenshot&font=inter'">
+                        </div>
+                    </div>
+
+                    <!-- Hero Text -->
+                    <div class="text-center md:text-left fade-in-section is-visible" style="transition-delay: 200ms;">
+                        <span class="inline-block px-4 py-1.5 bg-yellow-400/10 text-yellow-300 text-xs font-bold rounded-full uppercase tracking-wider border border-yellow-400/30">
+                            Launching First in Ibadan
+                        </span>
+                        <h1 class="text-5xl md:text-6xl font-extrabold text-white mt-5 leading-tight tracking-tighter">
+                            The "Netflix" for CoWorking Spaces.
+                        </h1>
+                        <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-xl mx-auto md:mx-0">
+                            One simple subscription for unlimited access to a network of quality workspaces across Africa. Stop paying per day. Start working your way.
+                        </p>
+                        <a href="#waitlist-form-section" class="mt-10 inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-full shadow-lg text-lg font-bold text-blue-900 btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                            Join the Founding Members
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works (Plans) Section -->
+        <section class="py-20 md:py-32 bg-gray-900 border-t border-b border-gray-800 fade-in-section">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">How It Works: Simple as 1-2-3</h2>
+                    <p class="mt-4 text-lg text-gray-400">Choose your plan. Find a space. Check in instantly.</p>
+                </div>
+                
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Plan 1: Flex Basic -->
+                    <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 card-lift">
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-300 text-sm font-semibold">Flex Basic</span>
+                        <p class="text-4xl font-extrabold text-white mt-6">8 <span class="text-lg font-medium text-gray-400">days/month</span></p>
+                        <p class="mt-2 text-gray-400">Access to all <strong class="text-gray-200">Standard</strong> spaces.</p>
+                    </div>
+                    
+                    <!-- Plan 2: Flex Pro -->
+                    <div class="bg-blue-800 text-white rounded-2xl p-8 shadow-2xl transform md:scale-105 card-lift border-2 border-yellow-400">
+                         <span class="inline-block px-4 py-1.5 rounded-full bg-yellow-400 text-blue-900 text-sm font-bold">Flex Pro</span>
+                        <p class="text-4xl font-extrabold text-white mt-6">16 <span class="text-lg font-medium text-blue-100">days/month</span></p>
+                        <p class="mt-2 text-blue-100">Access to all <strong class="text-white">Standard & Premium</strong> spaces.</p>
+                    </div>
+
+                    <!-- Plan 3: Flex Unlimited -->
+                    <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 card-lift">
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-300 text-sm font-semibold">Flex Unlimited</span>
+                        <p class="text-4xl font-extrabold text-white mt-6">Unlimited</p>
+                        <p class="mt-2 text-gray-400">Access to <strong class="text-gray-200">all spaces, all the time.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="py-20 md:py-32 bg-gray-900 fade-in-section">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Fixing a Broken System</h2>
+                    <p class="mt-4 text-lg text-gray-400">The old way of finding workspace is unpredictable and expensive. We're fixing the core problems for both professionals and space owners.</p>
+                </div>
+                
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <!-- Problem for Professionals -->
+                    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700/50 card-lift">
+                        <img src="https://placehold.co/500x300/374151/9CA3AF?text=Frustrated+Professional&font=inter" 
+                             alt="Professional working in a cafe" 
+                             class="rounded-lg aspect-video object-cover mb-6"
+                             onerror="this.src='https://placehold.co/500x300/374151/9CA3AF?text=Image&font=inter'">
+                        <h4 class="text-xl font-bold text-red-400">For Professionals & Teams:</h4>
+                        <ul class="mt-3 space-y-2 text-gray-400 list-disc list-outside ml-5">
+                            <li><strong class="text-gray-200">Unpredictable Costs:</strong> Daily fees add up and are hard to budget.</li>
+                            <li><strong class="text-gray-200">Wasted Time:</strong> Constant search for reliable Wi-Fi and power.</li>
+                            <li><strong class="text-gray-200">Expensive Leases:</strong> Long-term leases lock up vital startup capital.</li>
+                        </ul>
+                    </div>
+                    <!-- Problem for Owners -->
+                    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700/50 card-lift">
+                        <img src="https://placehold.co/500x300/374151/9CA3AF?text=Empty+Workspace&font=inter" 
+                             alt="Empty coworking space" 
+                             class="rounded-lg aspect-video object-cover mb-6"
+                             onerror="this.src='https://placehold.co/500x300/374151/9CA3AF?text=Image&font=inter'">
+                        <h4 class="text-xl font-bold text-green-400">For Workspace Owners:</h4>
+                        <ul class="mt-3 space-y-2 text-gray-400 list-disc list-outside ml-5">
+                            <li><strong class="text-gray-200">Empty Desks:</strong> Off-peak hours mean lost revenue every day.</li>
+                            <li><strong class="text-gray-200">High Marketing Costs:</strong> Hard to fill spaces without a big budget.</li>
+                            <li><strong class="text-gray-200">No Predictable Revenue:</strong> Unutilized capacity is a constant drain.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why We'll Win Section -->
+        <section class="py-20 md:py-32 bg-gray-800 fade-in-section">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-white">Our Competitive Advantage</h2>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+                    
+                    <!-- Feature 1: Network Effects -->
+                    <div class="text-center card-lift p-4 rounded-2xl">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500/10 text-blue-300 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-2.29l-2.114 2.114M17 20h-2m2 0v-2m0 2l-2.114-2.114M12 14c-4.418 0-8-3.134-8-7s3.582-7 8-7 8 3.134 8 7-3.582 7-8 7z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-white">Network Effects</h3>
+                        <p class="mt-2 text-base text-gray-400">More subscribers attract more quality spaces. More spaces attract more subscribers.</p>
+                    </div>
+
+                    <!-- Feature 2: Quality Over Quantity -->
+                    <div class="text-center card-lift p-4 rounded-2xl">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-400/10 text-yellow-300 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-white">Curated Quality</h3>
+                        <p class="mt-2 text-base text-gray-400">Every space is vetted for reliable internet, power, and a professional environment.</p>
+                    </div>
+
+                    <!-- Feature 3: Technology That Works -->
+                    <div class="text-center card-lift p-4 rounded-2xl">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-green-400/10 text-green-300 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-white">Seamless Tech</h3>
+                        <p class="mt-2 text-base text-gray-400">Sub-3-second check-ins, 99.9% uptime, and secure payments via Paystack/Flutterwave.</p>
+                    </div>
+
+                    <!-- Feature 4: Data Advantage -->
+                    <div class="text-center card-lift p-4 rounded-2xl">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-400/10 text-indigo-300 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-white">Data Advantage</h3>
+                        <p class="mt-2 text-base text-gray-400">Our data on workspace demand will become our ultimate competitive moat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waitlist Form Section -->
+        <section id="waitlist-form-section" class="py-20 md:py-32 bg-gray-900 fade-in-section">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">Join the Founding Members</h2>
+                <p class="mt-4 text-lg text-gray-300">
+                    Launching in Ibadan. Be one of the first 100 subscribers and get
+                    <strong class="text-yellow-400">20% off for your first 3 months.</strong>
+                </p>
+                
+                <div class="mt-10 bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-6 md:p-8 text-left">
+                    <form id="waitlist-form" class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3.5 border border-gray-600 rounded-xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white bg-gray-700 placeholder-gray-400">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3.5 border border-gray-600 rounded-xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white bg-gray-700 placeholder-gray-400">
+                        </div>
+                        
+                        <div>
+                            <label for="userType" class="block text-sm font-medium text-gray-300">I am a...</label>
+                            <select id="userType" name="userType" required class="mt-1 block w-full px-4 py-3.5 border border-gray-600 rounded-xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white bg-gray-700">
+                                <option value="subscriber">Professional / Subscriber</option>
+                                <option value="partner">Workspace Owner / Partner</option>
+                                <option value="investor">Investor / Other</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" id="submit-button" class="w-full flex justify-center py-4 px-4 border border-transparent rounded-full shadow-lg text-lg font-bold text-blue-900 btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                            <span id="button-text">Secure My Spot</span>
+                            <svg id="button-loading" class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-900 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section (Partner) -->
+        <section id="for-partners" class="py-20 md:py-32 bg-gray-900 border-t border-gray-800 fade-in-section">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Are you a workspace owner?
+                </h2>
+                <p class="mt-4 text-xl text-gray-400">
+                    Partner with us to monetize your empty seats, risk-free. We provide a new, predictable revenue channel at zero cost to you.
+                </p>
+                <a href="#waitlist-form-section" class="mt-10 inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-full shadow-lg text-lg font-bold text-blue-900 btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                    Register as a Partner
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <p>&copy; 2025 Workspace Africa. All rights reserved.</p>
+            <p class="text-sm mt-1">One subscription. Unlimited workspaces. Infinite possibilities.</p>
+        </div>
+    </footer>
+
+    <!-- Message Box (Hidden by default) -->
+    <div id="message-box" class="fixed bottom-0 right-0 m-4 md:m-8 p-6 rounded-2xl shadow-xl w-96 max-w-[90%] opacity-0 transform translate-y-4" role="alert">
+        <div class="flex items-start">
+            <div id="message-icon" class="flex-shrink-0">
+                <!-- Icon will be inserted here by JS -->
+            </div>
+            <div class."ml-3">
+                <h3 id="message-title" class="text-lg font-bold"></h3>
+                <p id="message-body" class="text-sm text-gray-400 mt-1"></p>
+            </div>
+            <button id="message-close" class="ml-auto -mr-2 -mt-2 p-2 rounded-full text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Firebase and App Logic -->
+    <script type="module">
+        // Firebase Imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged }from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- Firebase Configuration ---
+        
+        // These global variables are provided by the environment.
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-waitlist-app';
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth, userId;
+
+        // --- App Initialization ---
+        
+        try {
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+            
+            // Enable debug logging for Firestore
+            setLogLevel('Debug');
+
+            // Authenticate the user
+            await authenticateUser();
+            
+            console.log("Firebase initialized successfully.");
+
+        } catch (error)
+        {
+            console.error("Firebase initialization failed:", error);
+        }
+
+        /**
+         * Authenticates the user with Firebase.
+         */
+        async function authenticateUser() {
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    userId = user.uid;
+                    console.log("User authenticated with UID:", userId);
+                }
+            });
+
+            try {
+                if (initialAuthToken) {
+                    console.log("Authenticating with custom token...");
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    console.log("Authenticating anonymously...");
+                    await signInAnonymously(auth);
+                }
+            } catch (error) {
+                console.error("Authentication error:", error);
+            }
+        }
+        
+        // --- UI Elements ---
+        const waitlistForm = document.getElementById('waitlist-form');
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const buttonLoading = document.getElementById('button-loading');
+        
+        const messageBox = document.getElementById('message-box');
+        const messageTitle = document.getElementById('message-title');
+        const messageBody = document.getElementById('message-body');
+        const messageIcon = document.getElementById('message-icon');
+        const messageClose = document.getElementById('message-close');
+
+        // --- Event Listeners ---
+        
+        /**
+         * Handles the waitlist form submission.
+         */
+        waitlistForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!db || !auth || !userId) {
+                showMessage("Error", "Service is not ready. Please wait a moment and try again.", "error");
+                return;
+            }
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const userType = document.getElementById('userType').value;
+
+            // Simple validation
+            if (!name || !email || !userType) {
+                showMessage("Missing Information", "Please fill out all fields.", "error");
+                return;
+            }
+
+            // Show loading state
+            setLoading(true);
+
+            try {
+                // --- Save to Firestore ---
+                const waitlistCollectionPath = `/artifacts/${appId}/public/data/waitlist`;
+                const waitlistCollection = collection(db, waitlistCollectionPath);
+                
+                const docRef = await addDoc(waitlistCollection, {
+                    name: name,
+                    email: email,
+                    userType: userType,
+                    timestamp: serverTimestamp(),
+                    addedByUserId: userId 
+                });
+
+                console.log("Document written with ID: ", docRef.id);
+                
+                // Show success
+                showMessage("You're on the list!", "Thank you for joining the Founding Members waitlist. We'll be in touch soon!", "success");
+                waitlistForm.reset();
+
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                showMessage("Submission Error", "Something went wrong. Please check your connection and try again.", "error");
+            } finally {
+                setLoading(false);
+            }
+        });
+
+        /**
+         * Closes the message box.
+         */
+        messageClose.addEventListener('click', () => {
+            hideMessage();
+        });
+
+        // --- "COME ALIVE" ANIMATION SCRIPT ---
+        try {
+            const sections = document.querySelectorAll('.fade-in-section');
+            
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1 
+                });
+
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            } else {
+                sections.forEach(section => {
+                    section.classList.add('is-visible');
+                });
+            }
+        } catch (error) {
+            console.warn("Animation script failed to load, but content will still be visible.", error);
+        }
+
+
+        // --- UI Helper Functions ---
+
+        /**
+         * Toggles the loading state of the submit button.
+         */
+        function setLoading(isLoading) {
+            if (isLoading) {
+                submitButton.disabled = true;
+                buttonText.classList.add('hidden');
+                buttonLoading.classList.remove('hidden');
+            } else {
+                submitButton.disabled = false;
+                buttonText.classList.remove('hidden');
+                buttonLoading.classList.add('hidden');
+            }
+        }
+
+        /**
+         * Hides the message box.
+         */
+        function hideMessage() {
+            messageBox.classList.add('opacity-0', 'translate-y-4');
+            messageBox.classList.remove('opacity-100', 'translate-y-0');
+        }
+
+        /**
+         * Displays a success or error message.
+         */
+        function showMessage(title, body, type = 'success') {
+            messageTitle.textContent = title;
+            messageBody.textContent = body;
+
+            if (type === 'success') {
+                messageBox.classList.remove('border-red-500');
+                messageBox.classList.add('border-green-500');
+                messageTitle.classList.remove('text-red-300');
+                messageTitle.classList.add('text-green-300');
+                messageIcon.innerHTML = `<svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
+            } else {
+                messageBox.classList.remove('border-green-500');
+                messageBox.classList.add('border-red-500');
+                messageTitle.classList.remove('text-green-300');
+                messageTitle.classList.add('text-red-300');
+                messageIcon.innerHTML = `<svg class="h-6 w-6 text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`;
+            }
+
+            messageBox.classList.remove('opacity-0', 'translate-y-4');
+            messageBox.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(hideMessage, 5000);
+        }
+
+    </script>
+</body>
+</html>
